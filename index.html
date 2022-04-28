@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0,viewport-fit=cover">
   <title>My LIFF app</title>
   <link rel="stylesheet" href="css/style.css" media="all">
 </head>
+
 <body>
   <p id="os"><b>OS:</b> </p>
   <p id="language"><b>Language:</b> </p>
@@ -67,18 +69,23 @@
 
     async function sendMsg() {
       if (liff.getContext().type != null) {
-        await liff.sendMessages([
-          {
-            "type": "sticker",
-            "stickerId": 52114111,
-            "packageId": 11539
-          },
-          {
-            "type": "text",
-            "text": "Hello cutie!"
-          }
-        ]);
-        alert("Message is sent");
+        try {
+          await liff.sendMessages([
+            {
+              "type": "sticker",
+              "stickerId": 52114111,
+              "packageId": 11539
+            },
+            {
+              "type": "text",
+              "text": "Hello cutie!"
+            }
+          ]);
+          alert("Message is sent");
+        }
+        catch (error) {
+          alert (error);
+        }
       }
     }
 
@@ -107,7 +114,7 @@
       document.getElementById("version").append(liff.getVersion());
       document.getElementById("accessToken").append(liff.getAccessToken());
       document.getElementById("isInClient").append(liff.isInClient());
-      
+
       if (liff.isInClient()) {
         document.getElementById("btnLogOut").style.display = "none";
       }
@@ -130,4 +137,5 @@
     main()
   </script>
 </body>
+
 </html>
