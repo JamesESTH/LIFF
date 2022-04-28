@@ -56,6 +56,7 @@
     }
 
     function closed() {
+      liff.closeWindow();
     }
 
     async function scanCode() {
@@ -74,7 +75,7 @@
       const friend = await liff.getFriendship();
       document.getElementById("friendship").append(friend.friendFlag);
       if (!friend.friendFlag) {
-        if (confirm("คุณยังไม่ได้เพิ่ม Bot เป็นเพื่อน จะเพิ่มเลยไหม?")){
+        if (confirm("คุณยังไม่ได้เพิ่ม Bot เป็นเพื่อน จะเพิ่มเลยไหม?")) {
           window.location = "https://line.me/R/ti/p/@318birgg";
         }
       }
@@ -97,11 +98,11 @@
           alert("Message is sent");
         }
         catch (error) {
-          alert (error.message);
+          alert(error.message);
         }
       }
       else {
-        alert ("Context is null");
+        alert("Context is null");
       }
     }
 
@@ -144,10 +145,16 @@
     async function main() {
       // alert("LINE Developers x Skooldio")
       await liff.init({ liffId: "1657089907-KoyrarkW" })
-      getEnvironment()
-      getUserProfile()
-      getContext()
-      getFriendship()
+      document.getElementById("isLoggedIn").append(liff.isLoggedIn());
+      if (liff.isLoggedIn) {
+        getEnvironment();
+        getUserProfile();
+        getContext();
+        getFriendship();
+      }
+      else {
+        liff.login();
+      }
       // createUniversalLink()
     }
     main()
