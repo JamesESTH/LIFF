@@ -50,9 +50,21 @@
     }
 
     async function shareMsg() {
+      await liff.shareTargetPicker(
+        {
+          "type": "sticker",
+          "stickerId": 52114111,
+          "packageId": 11539
+        },
+        {
+          "type": "text",
+          "text": "Hello cutie! I'm not a scammer!"
+        });
     }
 
     function logOut() {
+      liff.logOut();
+      window.location.reload();
     }
 
     function closed() {
