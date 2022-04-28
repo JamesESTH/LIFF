@@ -50,7 +50,7 @@
     }
 
     async function shareMsg() {
-      await liff.shareTargetPicker(
+      await liff.shareTargetPicker([
         {
           "type": "sticker",
           "stickerId": 52114111,
@@ -59,7 +59,7 @@
         {
           "type": "text",
           "text": "Hello cutie! I'm not a scammer!"
-        });
+        }]);
     }
 
     function logOut() {
