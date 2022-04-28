@@ -65,6 +65,13 @@
     }
 
     async function getFriendship() {
+      const friend = await liff.getFriendship();
+      document.getElementById("friendship").append(friend.friendFlag);
+      if (!friend.friendFlag) {
+        if (confirm("คุณยังไม่ได้เพิ่ม Bot เป็นเพื่อน จะเพิ่มเลยไหม?")){
+          window.location = "https://line.me/R/ti/p/@318birgg";
+        }
+      }
     }
 
     async function sendMsg() {
@@ -84,8 +91,11 @@
           alert("Message is sent");
         }
         catch (error) {
-          alert (error);
+          alert (error.message);
         }
+      }
+      else {
+        alert ("Context is null");
       }
     }
 
@@ -131,7 +141,7 @@
       getEnvironment()
       getUserProfile()
       getContext()
-      // getFriendship()
+      getFriendship()
       // createUniversalLink()
     }
     main()
