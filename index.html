@@ -58,7 +58,7 @@
         },
         {
           "type": "text",
-          "text": "Hello cutie! I'm not a scammer!"
+          "text": "I'm not a scammer!"
         }]);
     }
 
@@ -78,7 +78,7 @@
 
     function openWindow() {
       liff.openWindow({
-        url: "https://line.me",
+        url: "https://liff.line.me/1657089907-KoyrarkW",
         external: true
       });
     }
@@ -158,7 +158,7 @@
       // alert("LINE Developers x Skooldio")
       await liff.init({ liffId: "1657089907-KoyrarkW" })
       document.getElementById("isLoggedIn").append(liff.isLoggedIn());
-      if (liff.isLoggedIn) {
+      if (liff.isLoggedIn()) {
         getEnvironment();
         getUserProfile();
         getContext();
