@@ -38,10 +38,14 @@
   <button id="btnLogOut" onclick="logOut()">Log Out</button>
   <button id="btnClose" onclick="closed()">Close</button>
 
-  <label for="emp_code">Employee code</label>
-  <input type="text" id="emp_code">
-  <label for="password">Employee code</label>
-  <input type="password" id="password">
+  <p>
+    <label for="emp_code">Employee code</label>
+    <input type="text" id="emp_code">
+  </p>
+  <p>
+    <label for="password">Password</label>
+    <input type="password" id="password">
+  </p>
   <button id="submit" onclick="linkLine()">Submit</button>
 
   <script src="js/vconsole.min.js"></script>
@@ -174,7 +178,7 @@
       let suffix = "/LineBot/ConnectLineId";
 
       let headers = new headers();
-      headers.append("Content-Type","text/json");
+      headers.append("Content-Type", "text/json");
 
       let paramObject = {
         empCode: empCode,
@@ -184,10 +188,10 @@
 
       let init = {
         method: "POST",
-        body: JSON.stringify(paramObject);
+        body: JSON.stringify(paramObject)
       };
 
-      let result = await fetch(url+suffix,init);
+      let result = await fetch(url + suffix, init);
       console.log(result);
     }
 
