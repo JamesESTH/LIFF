@@ -182,8 +182,9 @@
       console.log(`AccessToken = ${accessToken}`);
       console.log(url + suffix);
 
-      let headers = new headers();
+      let headers = new Headers();
       headers.append("Content-Type", "text/json");
+      console.log(`Headers: ${headers}`);
 
       let paramObject = {
         emp_code: empCode,
@@ -191,7 +192,7 @@
         access_token: accessToken
       };
 
-      console.log(paramObject);
+      console.log(`ParamObject: ${paramObject}`);
 
       let init = {
         method: "POST",
