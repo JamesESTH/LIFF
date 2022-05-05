@@ -38,11 +38,17 @@
   <button id="btnLogOut" onclick="logOut()">Log Out</button>
   <button id="btnClose" onclick="closed()">Close</button>
 
-  <!-- <script src="js/vconsole.min.js"></script> -->
-  <!-- <script>
+  <label for="emp_code">Employee code</label>
+  <input type="text" id="emp_code">
+  <label for="password">Employee code</label>
+  <input type="password" id="password">
+  <button id="submit" onclick="linkLine()">Submit</button>
+
+  <script src="js/vconsole.min.js"></script>
+  <script>
     var vConsole = new VConsole()
     console.log("Hello World!")
-  </script> -->
+  </script>
 
   <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
   <script>
@@ -160,6 +166,21 @@
       }
     }
 
+    async function linkLine() {
+      let empCode = document.getElementById("emp_code").value;
+      let password = document.getElementById("password").value;
+      let accessToken = document.getElementById("accessToken").value;
+      let url = "https://c9a6-171-6-11-50.ngrok.io";
+      let suffix = "/LineBot/ConnectLineId";
+
+      let init = {
+        method: "POST",
+      };
+
+      let result = await fetch(url+suffix,init);
+      console.log(result);
+    }
+
     async function main() {
       // alert("LINE Developers x Skooldio")
       await liff.init({ liffId: "1657089907-KoyrarkW" })
@@ -174,6 +195,11 @@
       else {
         liff.login();
       }
+      // getEnvironment();
+      // getUserProfile();
+      // getContext();
+      // getFriendship();
+      // createUniversalLink();
     }
     main()
   </script>
