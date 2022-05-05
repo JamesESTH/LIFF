@@ -177,6 +177,11 @@
       let url = "https://c9a6-171-6-11-50.ngrok.io";
       let suffix = "/LineBot/ConnectLineId";
 
+      console.log(`EmpCode = ${empCode}`);
+      console.log(`Password = ${password}`);
+      console.log(`AccessToken = ${accessToken}`);
+      console.log(url + suffix);
+
       let headers = new headers();
       headers.append("Content-Type", "text/json");
 
@@ -186,10 +191,14 @@
         accessToken: accessToken
       };
 
+      console.log(paramObject);
+
       let init = {
         method: "POST",
         body: JSON.stringify(paramObject)
       };
+
+      console.log(init.body);
 
       let result = await fetch(url + suffix, init);
       console.log(result);
