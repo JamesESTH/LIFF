@@ -47,6 +47,7 @@
     <input type="password" id="password">
   </p>
   <button id="submit" onclick="linkLine()">Submit</button>
+  <p>8</p>
 
   <script src="js/vconsole.min.js"></script>
   <script>
@@ -196,9 +197,9 @@
 
       let init = {
         method: "POST",
-        mode: "cors",
         headers: headers,
-        body: JSON.stringify(paramObject)
+        mode: "no-cors",
+        body: paramObject
       };
 
       console.log(init.body);
