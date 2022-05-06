@@ -183,7 +183,7 @@
       console.log(url + suffix);
 
       let headers = new Headers();
-      headers.append("Content-Type", "application/json");
+      headers.append("Content-Type", "application/json;charset=UTF-8");
       console.log(`Headers: ${headers}`);
 
       let paramObject = {
@@ -197,7 +197,6 @@
       let init = {
         method: "POST",
         headers: headers,
-        mode: "no-cors",
         body: JSON.stringify(paramObject)
       };
 
