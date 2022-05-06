@@ -174,7 +174,7 @@
       let empCode = document.getElementById("emp_code").value;
       let password = document.getElementById("password").value;
       let accessToken = liff.getAccessToken();
-      let url = "https://c9a6-171-6-11-50.ngrok.io";
+      let url = "https://1e6f-171-6-11-50.ngrok.io";
       let suffix = "/LineBot/ConnectLineId";
 
       console.log(`EmpCode = ${empCode}`);
@@ -187,9 +187,9 @@
       console.log(`Headers: ${headers}`);
 
       let paramObject = {
-        emp_code: empCode,
-        emp_pass: password,
-        access_token: accessToken
+        empCode: empCode,
+        password: password,
+        accessToken: accessToken
       };
 
       console.log(`ParamObject: ${paramObject}`);
